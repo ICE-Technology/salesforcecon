@@ -61,7 +61,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
        msg1=JSON.parse(msg.payload);
 	   msg2=JSON.stringify(msg1);
     ch.assertQueue(q, {durable: false});
-    // Note: on Node 6 Buffer.from(msg) should be used 
+    // Note: on Node 6 Buffer.from(msg) should be used ..
     ch.sendToQueue(q, new Buffer(msg2));
     console.log(" [x] Sent %s", msg2);
   });
